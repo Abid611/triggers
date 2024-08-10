@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false">
+
+ <c:CaseEmailComp recipientId="005WU000003BohK" relatedToId="003WU00000352CDYAY" />
+
+</apex:page>

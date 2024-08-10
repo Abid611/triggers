@@ -1,0 +1,13 @@
+<template>
+    <div class="weather-container">
+        <lightning-input type="text" label="City" value={city} onchange={handleCityChange}></lightning-input>
+        <lightning-button label="Get Weather" onclick={handleGetWeather}></lightning-button>
+
+        <template if:true={hasWeatherData}>
+            <p>City: {city}</p>
+            <p>Temperature: {temperature}°C</p>
+            <p>Condition: {description}</p>
+            <p>Humidity: {humidity}%</p>
+        </template>
+    </div>
+</template>

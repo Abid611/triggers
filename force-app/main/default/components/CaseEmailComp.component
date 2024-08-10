@@ -1,0 +1,47 @@
+<apex:component controller="RelatedCasesController" access="global">
+    
+    <!--
+    <apex:attribute name="recipientId" type="string" description="The recipient's ID"/>
+    <apex:attribute name="relatedToId" type="string" description="The related object's ID"/>
+
+    <apex:variable var="recipientId" value="{!recipientId}" />
+    <apex:variable var="relatedToId" value="{!relatedToId}" />
+    -->
+    <apex:attribute name="recipientIdd" type="String" description="The ID of the contact" assignTo="{!recipientId}" />
+    <apex:attribute name="relatedToIdd" type="String" description="The ID of the contact" assignTo="{!relatedToId}" />
+    <html>
+        <head>
+            <style>
+                body {
+                    font-family: 'Helvetica', 'Arial', sans-serif;
+                    font-size: 9pt;
+                }
+            </style>
+        </head>
+        <body>
+            <p>Hello</p>
+                  
+					<p>The following cases are waiting for your review:</p>
+            
+            
+    <apex:dataTable value="{!relatedCases}" var="case" style="width: 100%;">
+        <apex:column headerValue="Case Number">
+            <apex:outputLink value="{!URLFOR($Action.Case.View, case.Id)}">{!case.CaseNumber}</apex:outputLink>
+        </apex:column>
+        <apex:column headerValue="Status" value="{!case.Status}" />
+        <apex:column headerValue="Subject" value="{!case.Subject}" />
+        <apex:column headerValue="Opened Date" value="{!case.CreatedDate}" />
+    </apex:dataTable>
+            
+            <!--
+            <apex:repeat value="{!cases}" var="case">
+                <p>Case Number: {!case.CaseNumber} - Subject: {!case.Subject} - Status: {!case.Status}</p>
+            </apex:repeat>
+            -->
+            
+            <p>Log into your Arc’teryx ReCARE™ Dealer Portal to view the latest updates.</p>
+            <p>Please contact us anytime with questions or comments. We're here to help.</p>
+            <p>Thanks,</p>
+        </body>
+    </html>
+</apex:component>

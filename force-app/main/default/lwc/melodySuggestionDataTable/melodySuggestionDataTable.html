@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Suggestions" icon-name="standard:suggestion">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Add New" onclick={addNewRecord} class="slds-m-bottom_small"></lightning-button>
+            <lightning-datatable
+                key-field="id"
+                data={suggestions}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+    
+</template>
